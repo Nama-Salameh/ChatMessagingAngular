@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
-import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +10,6 @@ export class AdminService {
   firestore: firebase.firestore.Firestore;
 
   constructor() {
-    firebase.initializeApp(environment.firebaseConfig);
     this.firestore = firebase.firestore();
     this.loadAdmins();
   }

@@ -2,7 +2,6 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
-import { environment } from '../../environments/environment';
 import { AdminService } from '../adminService/admin.service';
 
 @Component({
@@ -24,7 +23,6 @@ export class ConversationComponent {
     private route: ActivatedRoute,
     private adminService: AdminService
   ) {
-    firebase.initializeApp(environment.firebaseConfig);
     this.firestore = firebase.firestore();
   }
 
