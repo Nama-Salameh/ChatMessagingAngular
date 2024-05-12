@@ -1,0 +1,14 @@
+<div class="admin-selector-container">
+  <p>Select an admin</p>
+  <select
+    required
+    [(ngModel)]="selectedAdminId"
+    (change)="selectAdmin(selectedAdminId)"
+    class="admin-selector"
+  >
+    <option [ngValue]="null" disabled selected>Select an admin</option>
+    <option *ngFor="let admin of admins" [ngValue]="admin.id">
+      {{ admin.data.adminName }}
+    </option>
+  </select>
+</div>

@@ -1,0 +1,43 @@
+<div class="homeContainer">
+  <div class="conversation-header">
+    <h2 class="reciever-name">{{ recieverAdminName }}</h2>
+  </div>
+  <div class="conversationContainer" #conversationContainer>
+    <p class="startConversation">Start the conversation!</p>
+    <div class="conversations" *ngFor="let conversation of conversations">
+      <div
+        *ngIf="conversation.data.senderId === selectedAdminId"
+        class="admin-message"
+      >
+        {{ conversation.data.messageContent }}
+      </div>
+      <div
+        *ngIf="conversation.data.senderId !== selectedAdminId"
+        class="other-message"
+      >
+        {{ conversation.data.messageContent }}
+      </div>
+    </div>
+  </div>
+  <div class="sendContainer">
+    <input
+      type="text"
+      class="input"
+      placeholder="Send a message..."
+      #messageInput
+      (keyup.enter)="sendMessage(messageInput.value)"
+    />
+
+    <button
+      mat-icon-button
+      (click)="sendMessage(messageInput.value)"
+      class="custom-button"
+    >
+      <mat-icon
+        aria-hidden="false"
+        aria-label="send icon"
+        fontIcon="send"
+      ></mat-icon>
+    </button>
+  </div>
+</div>

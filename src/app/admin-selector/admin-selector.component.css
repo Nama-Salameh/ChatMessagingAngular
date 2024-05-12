@@ -1,0 +1,12 @@
+.admin-selector-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 18px;
+}
+.admin-selector {
+  width: 20%;
+  height: 5%;
+}
