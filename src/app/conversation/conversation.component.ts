@@ -66,7 +66,6 @@ export class ConversationComponent {
           return timeA - timeB;
         });
       });
-    this.scrollToBottom();
   }
 
   sendMessage(message: string) {
@@ -92,15 +91,6 @@ export class ConversationComponent {
         .catch((error) => {
           console.error('Error adding conversation:', error);
         });
-    }
-  }
-
-  scrollToBottom() {
-    try {
-      this.conversationContainer.nativeElement.scrollTop =
-        this.conversationContainer.nativeElement.scrollHeight;
-    } catch (err) {
-      console.error(err);
     }
   }
 }
